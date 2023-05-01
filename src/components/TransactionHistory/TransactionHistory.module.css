@@ -1,0 +1,13 @@
+.transactions {
+  background-color: #f1eeeed5;
+  width: 80vw;
+  margin-bottom: 50px;
+}
+.thead {
+  color: #f1eeeed5;
+  background-color: rgb(0, 153, 255);
+}
+.td {
+  text-align: center;
+  text-transform: capitalize;
+}

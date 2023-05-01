@@ -1,0 +1,26 @@
+.friendListItem {
+  display: flex;
+  position: relative;
+  padding: 12px;
+  padding-left: 36px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  background-color: #fffcfc;
+}
+.isOnline {
+  background-color: green;
+  width: 16px;
+  height: 16px;
+  border-radius: 25%;
+  position: absolute;
+  left: 10px;
+  top: 28px;
+}
+.friend__paragraph {
+  margin-left: 14px;
+}
+
+.isOffline {
+  composes: isOnline;
+  background-color: red;
+}
