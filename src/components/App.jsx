@@ -21,11 +21,7 @@ export const App = () => {
     >
       <Profile user={user} />
       <FriendList friendList={friends} />
-      {data.title ? (
-        <Statistics title={data.title} stats={data} />
-      ) : (
-        <Statistics stats={data} />
-      )}
+      <Statistics title={data.title} stats={data} />
       <TransactionHistory items={transactions} />
     </div>
   );
