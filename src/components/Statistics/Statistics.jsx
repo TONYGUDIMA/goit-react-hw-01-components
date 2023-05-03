@@ -11,51 +11,74 @@ function getRandomColor() {
 }
 export default function Statistics({ stats, title }) {
   stats.sort((a, b) => a.percentage - b.percentage);
-  if (title) {
-    return (
-      <div>
-        <h2>{title}</h2>
-        <ul className={css.statsList}>
-          {stats.map(el => {
-            return (
-              <li
-                key={el.id}
-                style={{
-                  backgroundColor: getRandomColor(),
-                  width: `${el.percentage}%`,
-                }}
-              >
-                <span>{el.label}</span>
-                <br />
-                <span>{el.percentage}%</span>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  } else
-    return (
-      <div>
-        <ul className={css.statsList}>
-          {stats.map(el => {
-            return (
-              <li
-                key={el.id}
-                style={{
-                  backgroundColor: getRandomColor(),
-                  width: `${el.percentage}%`,
-                }}
-              >
-                <span>{el.label}</span>
-                <br />
-                <span>{el.percentage}%</span>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
+  return (
+    <div>
+      {title && <h2>{title}</h2>}
+      <ul className={css.statsList}>
+        {stats.map(el => {
+          return (
+            <li
+              key={el.id}
+              style={{
+                backgroundColor: getRandomColor(),
+                width: `${el.percentage}%`,
+              }}
+            >
+              <span>{el.label}</span>
+              <br />
+              <span>{el.percentage}%</span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+
+  // if (title) {
+  //   return (
+  //     <div>
+  //       <h2>{title}</h2>
+  //       <ul className={css.statsList}>
+  //         {stats.map(el => {
+  //           return (
+  //             <li
+  //               key={el.id}
+  //               style={{
+  //                 backgroundColor: getRandomColor(),
+  //                 width: `${el.percentage}%`,
+  //               }}
+  //             >
+  //               <span>{el.label}</span>
+  //               <br />
+  //               <span>{el.percentage}%</span>
+  //             </li>
+  //           );
+  //         })}
+  //       </ul>
+  //     </div>
+  //   );
+  // } else
+  //   return (
+  //     <div>
+  //       <ul className={css.statsList}>
+  //         {stats.map(el => {
+  //           return (
+  //             <li
+  //               key={el.id}
+  //               style={{
+  //                 backgroundColor: getRandomColor(),
+  //                 width: `${el.percentage}%`,
+  //               }}
+  //             >
+  //               <span>{el.label}</span>
+  //               <br />
+  //               <span>{el.percentage}%</span>
+  //             </li>
+  //           );
+  //         })}
+  //       </ul>
+  //     </div>
+  //   );
 }
 
 Statistics.propTypes = {
